@@ -1,4 +1,5 @@
 // my first http server in go
+// thanks github copilot
 package main
 
 import (
