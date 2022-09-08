@@ -35,10 +35,10 @@ func print(number interface{} ) {
 		fmt.Println(number)
 	}
 
-	func longPrint(inp int) {
-		// pull off the values and the type then set them
-		fmt.Printf("%v, %T \n", inp , inp)
-	}
+func longPrint(inp int) {
+	// pull off the values and the type then set them
+	fmt.Printf("%v, %T \n", inp , inp)
+}
 
 func main() {
 	// shadowing example
