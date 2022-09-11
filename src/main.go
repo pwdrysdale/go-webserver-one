@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=YS4e4q9oBaU
 // my first http server in go
 // thanks github copilot
 package main
@@ -34,14 +35,12 @@ type test_struct struct {
 	Test string `json:"test"`
 }
 
-	func test(rw http.ResponseWriter, req *http.Request) {
-    decoder := json.NewDecoder(req.Body)
-    var t test_struct
-    err := decoder.Decode(&t)
-    if err != nil {
-        panic(err)
-    }
-    log.Println(t)
+func test(rw http.ResponseWriter, req *http.Request) {
+	decoder := json.NewDecoder(req.Body)
+	var t test_struct
+	err := decoder.Decode(&t)
+	if err != nil {
+		panic(err)
+	}
+	log.Println(t)
 }
-
-
