@@ -129,6 +129,13 @@ func switchType(thing interface{}) {
 }
 
 func main() {
+	ifStatement()
+	ifElseIfStatement(1)
+	switchStatement(3)
+	switchMultipleCases(3)
+	switchRange(8)
+	switchType(4)
+
 	ifFlorida()
 
 	fmt.Println(isTruthy(1))
