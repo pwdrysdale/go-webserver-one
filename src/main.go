@@ -83,6 +83,7 @@ func getTodos(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(ok.Error()))
 		return
 	} else {
+		w.Header().Set("Content-Type", "application/json")
 		fmt.Fprintf(w, "%v", string(marshalled))
 	}
 
@@ -102,4 +103,5 @@ func test(rw http.ResponseWriter, req *http.Request) {
 		panic(err)
 	}
 	log.Println(t)
+	rw.WriteHeader(http.StatusOK)
 }

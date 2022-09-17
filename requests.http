@@ -1,2 +1,37 @@
 ### Get todos
 GET http://localhost:8000/todos
+
+> {%
+
+client.test("Correct array type", function () {
+    client.assert(response.status === 200, "Status code is 200");
+    client.assert(response.body instanceof Array, "responseBody is an array");
+
+    // must use var and loops, old school JS
+    var res = true
+
+    for (var i = 0; i < response.body.length; i++) {
+        const item = response.body[i]
+
+        if (typeof item.id !== "number" ||
+            typeof item.title !== "string" ||
+            typeof item.completed !== "boolean" ||
+            typeof item.userId !== "number") {
+            res = false
+        }
+    }
+
+
+    client.assert(res, "Response body was not correct format")
+})
+ %}
+
+### Post todo
+POST http://localhost:8000/todos
+content-type: application/json
+
+{
+  "title": "Todo title",
+  "description": "Todo description",
+  "completed": false
+}
