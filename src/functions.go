@@ -144,6 +144,20 @@ func main() {
 	anonymous()
 	anonymous2(5)
 	fmt.Println(anonymous3(5))
+	var anonymous4 = func(x int) (msg string) {
+		msg = "Anonymous4: " + strconv.Itoa(x)
+		fmt.Println(msg)
+		return
+	}
+	anonymous4(5)
+
+	// sepeated declaration and assignment
+	var anonymous5 func(int) string
+	anonymous5 = func(x int) string {
+		return "Anonymous5: " + strconv.Itoa(x)
+	}
+
+	fmt.Println(anonymous5(5))
 
 	// pointers
 	name := "John"
